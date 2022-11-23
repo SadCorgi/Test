@@ -8,7 +8,7 @@
 │  │        └─ Job092 Mask creation - from Job089  Initial threshold: 0.0361 Extend pixels: 2 Edge pixels: 10
 │  │           └─ Job093 Post-processing Half-maps: job089 Mask: job092
 │  │              └─ NOTE- Map looked promising, particles to be re-extracted
-│  ├─ 
+│  │             
 │  └─ Job097 Re-extraction with subset from job084 1.1 mil particles Bin2 Particle size pix: 360 Re-scale: 180
 │     └─ Job101 3Dclasses of Job097 into 8 classes, reference rescaled from Job091
 │        └─ Job103 3D Class (redo of Job101 with 4 classes, instead of 8)
@@ -17,7 +17,9 @@
 │           │     └─ Job110 Subset selection from Job105 Selected Class2 (169k@8.35A), Class3 (134k@7.7A) & Class4 (95k@8.6A) 399k particles saved
 │           │        └─ Job111 Re-Extraction From subset Job110, 399k particles, Bin1 not rescaled
 │           │           └─ Job112 3D classes From Job111 into 3 classes, Clone of job109
-│           ├─ 
+│           │              └─ Job113 Subset selection From Job112 Class 2(149k@9.1A) & Class3 (245k@6.8A), 394k particles selected
+│           │                 └─ Job114 3DRefine from Job113, map from rescaled Job091 map
+│           │                    └─
 │           └─ Job106 Subset selection from Job103 Select Class 1 (153k@8.3A), Class 2 (330k@6.5A)( & 3 (266k@8.1A)  749k particles saved
 │              └─ Job107 Re-extraction Using subset from Job016 Bin1
 │                 ├─ Job108 3Dclasses from extracted particles from Job107 Rescaled map 4 classes, reference rescaled from job091
