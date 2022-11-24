@@ -21,6 +21,7 @@
 │           │              │  └─ Job114 3DRefine from Job113, map from rescaled Job091 map
 │           │              └─ Job115 Subset select from Job112 Class3 (245k@6.8A)
 │           │                 └─ Job116 3DRefine from Job115, map from rescaled Job091 map
+│           │                    └─ Job Failed
 │           └─ Job106 Subset selection from Job103 Select Class 1 (153k@8.3A), Class 2 (330k@6.5A)( & 3 (266k@8.1A)  749k particles saved
 │              └─ Job107 Re-extraction Using subset from Job016 Bin1
 │                 ├─ Job108 3Dclasses from extracted particles from Job107 Rescaled map 4 classes, reference rescaled from job091
