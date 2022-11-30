@@ -1,45 +1,46 @@
 Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->gainbin2.mrc
 └─ Job002 Motion Corr, MPI 2, Threads 1, GPU 2
    ├─ Job003 CTF estimation, input from job2.
-   │   ├─ Job004 Subset select, input from Job003. Sorted by figure of merit. Choose image of cut off, select good images 12307 images saved
-   │   │  └─ Job005 Subset select, imput from Job004. 20 random images saved.  
-   │   │     └─ Job006 Manual picking, input from Job005. Particle size 150. Checked particles.
-   │   │        └─ Job007 Autopick, input from Job005. Lap of Gau Yes, min 100 max 150. Autopick perfoermed fine, proceeded to picking all particles.
-   │   │
-   │   ├─ Job008 Autopick, input from Job004. same setting as Job005. 8364129 particles picked.
-   │   │  └─ Job009 Particle extraction, Micrographs from Job004, Coordinates from Job008. Box size 240, Resized to 120, bin 2. 
-   │   │     └─ Job010 2D class, Input from Job009. 100 classes, fast subset Yes, Mask 160A.
-   │   │        └─ Job011 Subset select, Input from Job010. reverse sorted, 16 classes saved, 8193765 particles saved
-   │   │           └─ Job012 3D class, Input from Job011. Ref run_class001_1670_120.mrc (from P81_CH)
-   │   │              └─ Job013 Subset select, input from Job013. 3 classes selected, 8019911 particles saved
-   │   │                 └─ Job014 3D class, Input from Job013.
-   │   │                    └─ Job015 Subset select, Input from Job014.
-   │   │
-   │   └─ Job017 Particle extraction, ********
-   │
-   │
-   │            └─ Job033 Subset select, class#4 selected from 3D class Job032. 1.44 mil
-   │               └─ Job034 3D Class, input from Job033, map from 3D Class Job014,into 4 classes.
-   │                  └─ Job039 Subset select, class#1 from 3D Class Job034, 482k particles
-   │                     └─ Job040 3D Class, input from Job039, map from 3D Class Job014,into 4 classes. Class#3&4 look promising   
-   │                        │  
-   │                        ├─ Job043 Subset select, class #3&4 selected from Job040 3D class, 418k particles
-   │                        │  └─ Job044 3D Class, input from Job043, map from 3D Class Job014,into 4 classes. Classes not promising. STOPPED
-   │                        │
-   │                        └─ Job041 Subset select, select class#3 from 3D class Job040, 160k particles
-   │                           └─ Job042 3D Class, imput from Job041, map from 3D Class Job014, into 4 classes. Class#1-3 look promising, class#2 to be refined
-   │                              │       
-   │                              │ 
-   │                              └─ Job045 Subset select, class #2 selected from Job042 3D class, 32k particles
-   │                                 └─ Job046 3D Refine, particles from Selec Job045, reference from 3D class - class 2 from Job042
-   │        │                           ├─ Job047 Mask Create, map from 3D Refine Job046, lowpass 15, threshold 0.00987, soft edge 10.
-   │        │                           │   └─ Job048 Post Processing, half map from Job046, mask from Job047 
-   │        │                           │
-   │        │                           └─ Job049 Mask Create, map from 3D Refine Job046, lowpass 15, threshold 0.007, soft edge 10.
-   │        │                              └─ Job050 Post Processing, half map from Job046, mask from Job049
-   │        │                                 └─ Job053 Re-Extract, micrographs from Job004, from Job046 star file, Box size 320, not rescaled, bin1. 32200 particles
-   │        ├─ Job060 Extract, micrographs from Job004, coordinates from Job008, Box size 360, rescale 90, bin 4.
-   │        └─ Job065 Extract, micrographs from Job004, coordinates from Job008, Box size 360, rescale 90, bin 4. Bin 4 to be done from ctfFind again. STOPPED 
+   │   └─ Job004 Subset select, input from Job003. Sorted by figure of merit. Choose image of cut off, select good images 12307 images saved
+   │      ├─ Job005 Subset select, imput from Job004. 20 random images saved.  
+   │      │  └─ Job006 Manual picking, input from Job005. Particle size 150. Checked particles.
+   │      │     └─ Job007 Autopick, input from Job005. Lap of Gau Yes, min 100 max 150. Autopick perfoermed fine, proceeded to picking all particles.
+   │      │
+   │      ├─ Job008 Autopick, input from Job004. same setting as Job005. 8364129 particles picked.
+   │      │     └─ Job009 Particle extraction, Micrographs from Job004, Coordinates from Job008. Box size 240, Resized to 120, bin 2. 
+   │      │        └─ Job010 2D class, Input from Job009. 100 classes, fast subset Yes, Mask 160A.
+   │      │           └─ Job011 Subset select, Input from Job010. reverse sorted, 16 classes saved, 8193765 particles saved
+   │      │              ├─ Job012 3D class, Input from Job011. Ref map run_class001_1670_120.mrc (from P81_CH)
+   │      │              │  └─ Job013 Subset select, input from Job013. 3 classes selected, 8019911 particles saved
+   │      │              │     └─ Job014 3D class, Input from Job013.
+   │      │              │        ├─ Job015 Subset select, Input from Job014.
+   │      │              │        └─ Job020 Subset select, Input from Job014. Class#1 selected, 1202021 particles saved.
+   │      │              │           └─ Job028 3D class, input from Job020. ref map from Job014, into 4 classes.
+   │      │              │              └─ Job029 Subset select, Class#3 selected, 863634 particles saved.
+   │      │              │                 └─ Job030 3D Classes, input from Job029, ref map from Job014. into 4 classes.
+   │      │              └─ Job032 3D class, Input from Job011. Ref map from Job014. 
+   │      │                 └─ Job033 Subset select, class#4 selected from 3D class Job032. 1.44 mil
+   │      │                    └─ Job034 3D Class, input from Job033, map from 3D Class Job014,into 4 classes.
+   │      │                       └─ Job039 Subset select, class#1 from 3D Class Job034, 482k particles
+   │      │                          └─ Job040 3D Class, input from Job039, map from 3D Class Job014,into 4 classes. Class#3&4 look promising   
+   │      │                             │  
+   │      │                             ├─ Job043 Subset select, class #3&4 selected from Job040 3D class, 418k particles
+   │      │                             │  └─ Job044 3D Class, input from Job043, map from 3D Class Job014,into 4 classes. Classes not promising. STOPPED
+   │      │                             │
+   │      │                             └─ Job041 Subset select, select class#3 from 3D class Job040, 160k particles
+   │      │                                └─ Job042 3D Class, imput from Job041, map from 3D Class Job014, into 4 classes. Class#1-3 look promising, class#2 to be refined
+   │      │                                   │       
+   │      │                                   └─ Job045 Subset select, class #2 selected from Job042 3D class, 32k particles
+   │      │                                      └─ Job046 3D Refine, particles from Selec Job045, reference from 3D class - class 2 from Job042
+   │      │                                         ├─ Job047 Mask Create, map from 3D Refine Job046, lowpass 15, threshold 0.00987, soft edge 10.
+   │      │                                         │   └─ Job048 Post Processing, half map from Job046, mask from Job047 
+   │      │                                         │
+   │      │                                         └─ Job049 Mask Create, map from 3D Refine Job046, lowpass 15, threshold 0.007, soft edge 10.
+   │      │                                            └─ Job050 Post Processing, half map from Job046, mask from Job049
+   │      │                                               └─ Job053 Re-Extract, micrographs from Job004, from Job046 star file, Box size 320, not rescaled, bin1. 32200 particles
+   │      │   
+   │      ├─ Job060 Extract, micrographs from Job004, coordinates from Job008, Box size 360, rescale 90, bin 4.
+   │      └─ Job065 Extract, micrographs from Job004, coordinates from Job008, Box size 360, rescale 90, bin 4. Bin 4 to be done from ctfFind again. STOPPED 
    │
    │
    │
