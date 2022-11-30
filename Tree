@@ -48,64 +48,66 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
    └─ Job067 ctfFind, From MotionCorr Job002
       └─ Job068 Subset select, from ctfFind Job067
          └─ Job070 AutoPick, micrographs from Job068, 12304 micrographs, 8362329 particles
-            └─ Job071 Extract, micrographes from Job068, coordinates from Job070, Box size 390, rescale 90, bin 4.
+            └─ Job071 Extract, micrographes from Job068, coordinates from Job070, Box size 360, rescale 90, bin 4.
                └─ Job072 Class 2D, 1st round 2D of particles from Job071
                   └─ Job073 Subset select, 22 classes selected from Job072, 8.08 mil particles
                      └─ Job074 Class 2D from subset select Job073
                         └─ Job075 Subset select, 17 Class selected from 2D class job074, 7.9 mil particles
                            │
-                           ├─Job076 Initial model, did not work. STOPPED.
+                           ├─ Job076 Initial model, did not work. STOPPED.
                            │
-                           └─ Job081 3Dclass input from job075, rescaled map
-                              └─ Job082 Subset select, Class 3 only
-                                 └─ Job083 Class 5 seems to have PasA?, Class 7 look the best in detail, class 8 have the best resolution, 
-                                    │
-                                    ├─ Job 084 Subset selection Class 5(3.6k@8.3A),7(3.2k@8.3A)&8(4.2k@7A) from job job083 1.1m
-                                    │  ├─ Job085 3D Class 1.1m particles from job084 Class 5(360k@8.3A),7(320k@8.3A)&8(420k@7A) from job job083 Into 4 classes Note: Class 2 & 3 looks good, to combine and refine
-                                    │  │  └─ Job088 Subset selection Class 2 (220k@9A) & Class 3 (240k@9.4A) from job085 460k particles
-                                    │  │     └─ Job089 3Drefine from Job088
-                                    │  │        └─ Job092 Mask creation - from Job089  Initial threshold: 0.0361 Extend pixels: 2 Edge pixels: 10
-                                    │  │           └─ Job093 Post-processing Half-maps: job089 Mask: job092
-                                    │  │              └─ NOTE- Map looked promising, particles to be re-extracted
-                                    │  │             
-                                    │  └─ Job097 Re-extraction with subset from job084 1.1 mil particles Bin2 Particle size pix: 360 Re-scale: 180, bin 2.
-                                    │     └─ Job101 3Dclasses of Job097 into 8 classes, reference rescaled from Job091
-                                    │        └─ Job103 3D Class (redo of Job101 with 4 classes, instead of 8)
-                                    │           ├─ Job104 Subset selection from job103 Select Class 1 (153k@8.3A) & 3 (266k@8.1A) 419k particles saved
-                                    │           │  └─ Job105 3D Classes Clone of job103, use subset from Job104 4 Classes
-                                    │           │     └─ Job110 Subset selection from Job105 Selected Class2 (169k@8.35A), Class3 (134k@7.7A) & Class4 (95k@8.6A) 399k particles saved
-                                    │           │        └─ Job111 Re-Extraction From subset Job110, 399k particles, Bin1 not rescaled
-                                    │           │           └─ Job112 3D classes From Job111 into 3 classes, Clone of job109
-                                    │           │              ├─ Job113 Subset selection From Job112 Class 2(149k@9.1A) & Class3 (245k@6.8A), 394k particles selected
-                                    │           │              │  └─ Job114 3DRefine from Job113, map from rescaled Job091 map (NOTE: job failed before convergence reduced MPI->4, threads->3, restarted)
-                                    │           │              │     └─ Job--- low pass map generated, in job114 folder, Refined map doesn't make sense.
-                                    │           │              │        └─ STOPPED
-                                    │           │              │        
-                                    │           │              └─ Job115 Subset select from Job112 Class3 (245k@6.8A)
-                                    │           │                 └─ Job116 3DRefine from Job115, map from rescaled Job091 map (NOTE: job failed before convergence reduced MPI->4, threads->3, restarted)
-                                    │           │                    └─ Job--- low pass map generated, in job116 folder
-                                    │           │                       └─ Job117 Mask generation, level set to 0.004074
-                                    │           │                          └─ Job118 Post processing,half-map from Job116, Mask from Job117
-                                    │           │                             └─ Job119 CTFrefine particles from Job116, map from job 118
-                                    │           │                                └─ Job120 3DRefine use images from Job119
-                                    │           │ 
-                                    │           └─ Job106 Subset selection from Job103 Select Class 1 (153k@8.3A), Class 2 (330k@6.5A)( & 3 (266k@8.1A)  749k particles saved
-                                    │              │
-                                    │              └─ Job107 Re-extraction Using subset from Job016 Box size 360, not rescaled, bin1
-                                    │                 ├─ Job108 3Dclasses from extracted particles from Job107 Rescaled map 4 classes, reference rescaled from job091
-                                    │                 └─ Job109 3Dclasses from extracted particles from Job107 Rescaled map 3 classes
-                                    ├─ 
-                                    ├─ Job086 Subset selection Class 5(360k@8.3A) from job083 (might have PasA)
-                                    │  └─ Job087 Class3D 3.6k particles from job086 Class 5(360k@8.3A) from job083 Into 4 classes Note: Class 1, 3 & 4 looks good, to combine and refine
-                                    │     └─ Job090 Subset selection from job087 Class 1 (105k@9A), Class 3 (128k@8.5A) & Class 4 (97k@10.3A) 330k particlesJob094 Mask creation - from Job091 Initial threshold: 0.041 Extend pixels: 2 Edge pixels: 10
-                                    │        └─ Job091 3Drefine From job090
-                                    │           └─ Job094 Mask creation - from Job091 Initial threshold: 0.041 Extend pixels: 2 Edge pixels: 10
-                                    │              └─ Job095 Post-processing Half-maps: job091 Mask: job094
-                                    │                 └─ STOPPED - not promising
-                                    ├─ 
-                                    ├─ Job096 3D classes Copy of job083 8 classes Changes  low pass filter: 5 Iteration: 10 Fast subset: no
-                                       └─ Job102 3D Class (redo of Job096 with 4 classes, instead of 8)
-                                          └─ STOPPED - low pass filter and no fast subset did not improve quality
-                                    
-                                    
+                           ├─ Job081 3Dclass input from job075, rescaled map, into 4 classes
+                           │  └─ Job082 Subset select, Class 3 only
+                           │     └─ Job083 Class 5 seems to have PasA?, Class 7 look the best in detail, class 8 have the best resolution, 
+                           │        │
+                           │        ├─ Job 084 Subset selection Class 5(3.6k@8.3A),7(3.2k@8.3A)&8(4.2k@7A) from job job083 1.1m
+                           │        │  ├─ Job085 3D Class 1.1m particles from job084 Class 5(360k@8.3A),7(320k@8.3A)&8(420k@7A) from job job083 Into 4 classes Note: Class 2 & 3 looks good, to combine and refine
+                           │        │  │  └─ Job088 Subset selection Class 2 (220k@9A) & Class 3 (240k@9.4A) from job085 460k particles
+                           │        │  │     └─ Job089 3Drefine from Job088
+                           │        │  │        └─ Job092 Mask creation - from Job089  Initial threshold: 0.0361 Extend pixels: 2 Edge pixels: 10
+                           │        │  │           └─ Job093 Post-processing Half-maps: job089 Mask: job092
+                           │        │  │              └─ NOTE- Map looked promising, particles to be re-extracted
+                           │        │  │             
+                           │        │  └─ Job097 Re-extraction with subset from job084 1.1 mil particles Bin2 Particle size pix: 360 Re-scale: 180, bin 2.
+                           │        │     └─ Job101 3Dclasses of Job097 into 8 classes, reference rescaled from Job091
+                           │        │        └─ Job103 3D Class (redo of Job101 with 4 classes, instead of 8)
+                           │        │           ├─ Job104 Subset selection from job103 Select Class 1 (153k@8.3A) & 3 (266k@8.1A) 419k particles saved
+                           │        │           │  └─ Job105 3D Classes Clone of job103, use subset from Job104 4 Classes
+                           │        │           │     └─ Job110 Subset selection from Job105 Selected Class2 (169k@8.35A), Class3 (134k@7.7A) & Class4 (95k@8.6A) 399k particles saved
+                           │        │           │        └─ Job111 Re-Extraction From subset Job110, 399k particles, Bin1 not rescaled
+                           │        │           │           └─ Job112 3D classes From Job111 into 3 classes, Clone of job109
+                           │        │           │              ├─ Job113 Subset selection From Job112 Class 2(149k@9.1A) & Class3 (245k@6.8A), 394k particles selected
+                           │        │           │              │  └─ Job114 3DRefine from Job113, map from rescaled Job091 map (NOTE: job failed before convergence reduced MPI->4, threads->3, restarted)
+                           │        │           │              │     └─ Job--- low pass map generated, in job114 folder, Refined map doesn't make sense.
+                           │        │           │              │        └─ STOPPED
+                           │        │           │              │        
+                           │        │           │              └─ Job115 Subset select from Job112 Class3 (245k@6.8A)
+                           │        │           │                 └─ Job116 3DRefine from Job115, map from rescaled Job091 map (NOTE: job failed before convergence reduced MPI->4, threads->3, restarted)
+                           │        │           │                    └─ Job--- low pass map generated, in job116 folder
+                           │        │           │                       └─ Job117 Mask generation, level set to 0.004074
+                           │        │           │                          └─ Job118 Post processing,half-map from Job116, Mask from Job117
+                           │        │           │                             └─ Job119 CTFrefine particles from Job116, map from job 118
+                           │        │           │                                └─ Job120 3DRefine use images from Job119
+                           │        │           │ 
+                           │        │           └─ Job106 Subset selection from Job103 Select Class 1 (153k@8.3A), Class 2 (330k@6.5A)( & 3 (266k@8.1A)  749k particles saved
+                           │        │              │
+                           │        │              └─ Job107 Re-extraction Using subset from Job016 Box size 360, not rescaled, bin1
+                           │        │                 ├─ Job108 3Dclasses from extracted particles from Job107 Rescaled map 4 classes, reference rescaled from job091
+                           │        │                 └─ Job109 3Dclasses from extracted particles from Job107 Rescaled map 3 classes
+                           │        ├─ 
+                           │        ├─ Job086 Subset selection Class 5(360k@8.3A) from job083 (might have PasA)
+                           │        │  └─ Job087 Class3D 3.6k particles from job086 Class 5(360k@8.3A) from job083 Into 4 classes Note: Class 1, 3 & 4 looks good, to combine and refine
+                           │        │     └─ Job090 Subset selection from job087 Class 1 (105k@9A), Class 3 (128k@8.5A) & Class 4 (97k@10.3A) 330k particlesJob094 Mask creation - from Job091 Initial threshold: 0.041 Extend pixels: 2 Edge pixels: 10
+                           │        │        └─ Job091 3Drefine From job090
+                           │        │           └─ Job094 Mask creation - from Job091 Initial threshold: 0.041 Extend pixels: 2 Edge pixels: 10
+                           │        │              └─ Job095 Post-processing Half-maps: job091 Mask: job094
+                           │        │                 └─ STOPPED - not promising
+                           │        ├─ 
+                           │        ├─ Job096 3D classes Copy of job083 8 classes Changes  low pass filter: 5 Iteration: 10 Fast subset: no
+                           │           └─ Job102 3D Class (redo of Job096 with 4 classes, instead of 8)
+                           │              └─ STOPPED - low pass filter and no fast subset did not improve quality
+                           │        
+                           │   ^^^^^^^^^^^ All 3D classes above have used the wrong ref map from Job014 ^^^^^^^^^^^^
+                           └─ Job--- rescale map, Class#4 from Job014, relion_image_handler \--i /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc \--o /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc_360box_3.34angpix.mrc \--angpix 1.67 --rescale_angpix 3.34 --new_box 360
+                              └─ Job121 3D Class, Input from Job075, ref map from Job014 Class#4_rescaled, into 8 classes. (clone of Job081)
                                     
