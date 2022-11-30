@@ -1,5 +1,21 @@
-
-
+Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->gainbin2.mrc
+└─ Job002 Motion Corr, MPI 2, Threads 1, GPU 2
+   ├─ Job003 CTF estimation, input from job2.
+   │   ├─ Job004 Subset select, input from Job003. Sorted by figure of merit. Choose image of cut off, select good images 12307 images saved
+   │   │  └─ Job005 Subset select, imput from Job004. 20 random images saved.  
+   │   │     └─ Job006 Manual picking, input from Job005. Particle size 150. Checked particles.
+   │   │        └─ Job007 Autopick, input from Job005. Lap of Gau Yes, min 100 max 150. Autopick perfoermed fine, proceeded to picking all particles.
+   │   │
+   │   ├─ Job008 Autopick, input from Job004. same setting as Job005. 8364129 particles picked.
+   │   │  └─ Job009 Particle extraction, Micrographs from Job004, Coordinates from Job008. Box size 240, Resized to 120, bin 2. 
+   │   │     └─ Job010 2D class, Input from Job009. 100 classes, fast subset Yes, Mask 160A.
+   │   │        └─ Job011 Subset select, Input from Job010. reverse sorted, 16 classes saved, 8193765 particles saved
+   │   │           └─ Job012 3D class, Input from Job011. Ref run_class001_1670_120.mrc (from P81_CH)
+   │   │              └─ Job013 Subset select, input from Job013. 3 classes selected, 8019911 particles saved
+   │   │                 └─ Job014 3D class, Input from Job013.
+   │   │                    └─ Job015 Subset select, Input from Job014.
+   │   │
+   │   └─ Job017 Particle extraction, ********
    │
    │
    │            └─ Job033 Subset select, class#4 selected from 3D class Job032. 1.44 mil
