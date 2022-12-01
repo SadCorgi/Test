@@ -108,6 +108,6 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                            │              └─ STOPPED - low pass filter and no fast subset did not improve quality
                            │        
                            │   ^^^^^^^^^^^ All 3D classes above have used the wrong ref map from Job014 ^^^^^^^^^^^^
-                           └─ Job--- rescale map, Class#4 from Job014, relion_image_handler \--i /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc \--o /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc_360box_3.34angpix.mrc \--angpix 1.67 --rescale_angpix 3.34 --new_box 360
+                           └─ Job--- rescale map, Class#4 from Job014, relion_image_handler \--i /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc \--o /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc_90box_3.34angpix.mrc \--angpix 1.67 --rescale_angpix 3.34 --new_box 90
                               └─ Job122 3D Class, Input from Job075, ref map from Job014 Class#4_rescaled, into 8 classes. (clone of Job081)
                                     
