@@ -111,5 +111,6 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                            └─ Job--- rescale map, Class#4 from Job014, relion_image_handler \--i /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc \--o /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc_90box_3.34angpix.mrc \--angpix 1.67 --rescale_angpix 3.34 --new_box 90
                               └─ Job122 3D Class, Input from Job075, ref map from Job014 Class#4_rescaled, into 8 classes. (clone of Job081). Only Class#2 (2.2 mil particles @ 6.7A) looks good.
                                  └─ Job123 Subset select, Class#2 (2.2 mil particles @ 6.7A) selected from Job122.
-                                    └─ Job124 3D Class, Input from Job123, ref map from Job014 Class#4_rescaled, into 4 classes.
+                                    └─ Job124 3D Class, Input from Job123, ref map from Job014 Class#4_rescaled, into 4 classes. Class#2 (493k@7.2A) looks good.
+                                       └─ Job125 Subset selection, Class#2 (493k@7.2A) selected from Job124.
                                     
