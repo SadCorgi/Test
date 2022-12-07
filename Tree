@@ -113,4 +113,4 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                  └─ Job123 Subset select, Class#2 (2.2 mil particles @ 6.7A) selected from Job122.
                                     └─ Job124 3D Class, Input from Job123, ref map from Job014 Class#4_rescaled, into 4 classes. Class#2 (493k@7.2A) looks good.
                                        └─ Job125 Subset selection, Class#2 (493k@7.2A) selected from Job124.
-                                    
+                                          └─ Job126 3D Class, Imput from Job125, ref map from Job014 Class#4_rescaled, into 4 classes.
