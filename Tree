@@ -121,4 +121,6 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                                 │       └─ Job130 3Drefine, input from Job129, ref map from Job014 Class#4_rescaled.
                                                 │    
                                                 │
-                                                └─ Job131 Re-extraction, input from Job127, Bin 2
+                                                └─ Job131 Re-extraction, input from Job127, Bin 2. 455483 particles extracted.
+                                                   └─ Job---rescale map, Class#4 from Job014 rescaled to 180box size, 1.67A. relion_image_handler \--i /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc \--o /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc_180box_3.34angpix.mrc \--angpix 3.34 --rescale_angpix 1.67 --new_box 180
+                                                      └─ Job132 3D class, input from Job131, ref map from Job014 Class#4 rescaled.
