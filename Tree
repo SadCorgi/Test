@@ -115,10 +115,10 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                        └─ Job125 Subset selection, Class#2 (493k@7.2A) selected from Job124.
                                           └─ Job126 3D Class, Imput from Job125, ref map from Job014 Class#4_rescaled, into 4 classes. Class#1,3&4 looks very similar, select and process further.
                                              ├─ Job127 Subset select, input from Job126, Class#1 (80k@9.7A), Class#3 (186k@7.5A) & Class#4 (190k@7.5A). 455483 particles total.
-                                             │  ├─ Job128 3Drefine, input from Job127, ref map from Job014 Class#4_rescaled.
+                                             │  ├─ Job128 3Drefine, input from Job127, ref map from Job014 Class#4_rescaled. Both Job128&130 looks good, Job128 at slightly higher resolution. job127 was use for re-extraction.
                                              │  │
-                                             │  └─ Job131 Re-extraction, input from Job127, Bin 2
-                                     
-                                             │   
-                                             └─ Job129 Subset select, input from Job126, Class#3 (186k@7.5A) & Class#4 (190k@7.5A). 375615 particles total.
-                                                └─ Job130 3Drefine, input from Job129, ref map from Job014 Class#4_rescaled.
+                                             └───────── Job129 Subset select, input from Job126, Class#3 (186k@7.5A) & Class#4 (190k@7.5A). 375615 particles total.
+                                                │       └─ Job130 3Drefine, input from Job129, ref map from Job014 Class#4_rescaled.
+                                                │    
+                                                │
+                                                └─ Job131 Re-extraction, input from Job127, Bin 2
