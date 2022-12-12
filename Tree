@@ -123,15 +123,15 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                                 │
                                                 └─ Job131 Re-extraction, input from Job127, Bin 2. 455483 particles extracted.
                                                    └─ Job---rescale map, Class#4 from Job014 rescaled to 180box size, 1.67A. relion_image_handler \--i /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc \--o /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc_180box_3.34angpix.mrc \--angpix 3.34 --rescale_angpix 1.67 --new_box 180
-                                                      └─ Job132 3D class, input from Job131, ref map from Job014 Class#4 rescaled. Class#3 has the least detail compare to others, not saved for latter proceedures.
-                                                      │  └─ Job133 Subset select, input from Job132, Class#1,2&4 selected. 401213 particles saved.
-                                                      │     └─ Job134 3Drefine, input from Job133, refined model is distorded. try with less classes/particles.
-                                                      │
+                                                      └──── Job132 3D class, input from Job131, ref map from Job014 Class#4 rescaled. Class#3 has the least detail compare to others, not saved for latter proceedures.
+                                                      │     ├───────Job133 Subset select, input from Job132, Class#1,2&4 selected. 401213 particles saved.
+                                                      │     │        └─ Job134 3Drefine, input from Job133, refined model is distorded. try with less classes/particles.
+                                                      │     │
                                                       └─ Job135 Subset select, input from Job132, Class#1,2&4 selected. 289902 particles saved.
                                                          ├─ Job136 3Drefine, input from Job135, ref map job014 rescaled, map looks bad.
-                                                         └─ Job136 3Drefine, input from Job135, ref map job132 class#4.
-                                                      
-                                                      
+                                                         └─ Job136 3Drefine, input from Job135, ref map job132 class#4. looks better than before. go back to job133 subset to try again with new ref map.
+                                                            │
+                                                            └─ Job138 3Drefine, input from Job133, ref map job132 class#4.
                                                       
                                                       
                                                       
