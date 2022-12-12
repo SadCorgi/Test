@@ -128,7 +128,8 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                                       │     └─ Job134 3Drefine, input from Job133, refined model is distorded. try with less classes/particles.
                                                       │
                                                       └─ Job135 Subset select, input from Job132, Class#1,2&4 selected. 289902 particles saved.
-                                                         └─ Job136 3Drefine, input from Job135,
+                                                         ├─ Job136 3Drefine, input from Job135, ref map job014 rescaled, map looks bad.
+                                                         └─ Job136 3Drefine, input from Job135, ref map job132 class#4.
                                                       
                                                       
                                                       
