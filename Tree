@@ -137,4 +137,13 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                                    │
                                                    ├─ Job139 3D class, input from Job131, ref map from Job014 Class#4 rescaled. low pass-filter reduced to 15 from 20 
                                                    ├─ Job140 3D class, input from Job131, ref map from Job014 Class#4 rescaled. do not use fast subset, 10 iterations(LP-filter 20. 
-                                                   └─ Job141 3D class, input from Job131, ref map from good map rescaled.   
+                                                   ├─ Job141 3D class, input from Job131, ref map from good map rescaled.  Output maps still at the wrong hand
+                                                   └─ Job142 2D class, input from Job131,
+
+
+
+
+
+
+
+
