@@ -148,4 +148,4 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
 
 
 
-
+relion_image_handler —i map.mrc —o inverte_map.mrc —invert_hand
