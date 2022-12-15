@@ -131,19 +131,21 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                                    │           ├─ Job136 3Drefine, input from Job135, ref map job014 rescaled, map looks bad.
                                                    │           └─ Job136 3Drefine, input from Job135, ref map job132 class#4. looks better than before. go back to job133 subset to try again with new ref map.
                                                    │                 │
-                                                   │                 └─ Job138 3Drefine, input from Job133, ref map job132 class#4.
+                                                   │                 ├─ Job138 3Drefine, input from Job133, ref map job132 class#4.
                                                    │     ^^^^^^^^^ maps in mirror image after 3D classes i.e. job 132, redo 3Dclass in different settings below ^^^^^
-                                                   │
-                                                   │
+                                                   │                 │
+                                                   │                 │
                                                    ├─ Job139 3D class, input from Job131, ref map from Job014 Class#4 rescaled. low pass-filter reduced to 15 from 20 
                                                    ├─ Job140 3D class, input from Job131, ref map from Job014 Class#4 rescaled. do not use fast subset, 10 iterations(LP-filter 20. 
                                                    ├─ Job141 3D class, input from Job131, ref map from good map rescaled.  Output maps still at the wrong hand
-                                                   │
-                                                   │
+                                                   │                 │
+                                                   │                 │
                                                    ├─ Job142 2D class, input from Job131, try to redo 2D class then 3D to see if it will improve situation
                                                    └─ Job143 3D class, repeat of Job132, with NO greyscale, LP-filter=50, iteration 35.
-
-
+                                                                     │
+                                                                     │
+                                                                     │
+                                                                     └─ Job145 Re-extract, extract from subset Job133, bin1, 
 
 
 
