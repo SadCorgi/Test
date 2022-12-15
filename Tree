@@ -140,7 +140,8 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                                    ├─ Job141 3D class, input from Job131, ref map from good map rescaled.  Output maps still at the wrong hand
                                                    │
                                                    │
-                                                   └─ Job142 2D class, input from Job131, try to redo 2D class then 3D to see if it will improve situation
+                                                   ├─ Job142 2D class, input from Job131, try to redo 2D class then 3D to see if it will improve situation
+                                                   └─ Job143 3D class, repeat of Job132, with NO greyscale, LP-filter=50, iteration 35.
 
 
 
