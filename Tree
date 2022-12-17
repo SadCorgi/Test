@@ -141,11 +141,13 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                                    │                 │
                                                    │                 │
                                                    ├─ Job142 2D class, input from Job131, try to redo 2D class then 3D to see if it will improve situation
-                                                   └─ Job143 3D class, repeat of Job132, with NO greyscale, LP-filter=50, iteration 35.
+                                                   └─ Job143 3D class, repeat of Job132, with NO greyscale, LP-filter=50, iteration 35. Maps are correctly handed. Follow these settings.
                                                                      │
                                                                      │
                                                                      │
-                                                                     └─ Job145 Re-extract, extract from subset Job133, bin1, 
+                                                                     └─ Job145 Re-extract, extract from subset Job133, bin1
+                                                                        └─ Job--- Re-scale map for bin1.relion_image_handler \--i /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc \--o /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc_360box_0.835angpix.mrc \--angpix 3.34 --rescale_angpix 0.835 --new_box 360
+                                                                           └─ Job146 3D class, input from Job145, ref map from job014 class#4. 8 classes, NO greyscale, LP-filter=50, 35 iterations.
 
 
 
