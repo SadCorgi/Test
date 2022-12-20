@@ -152,7 +152,8 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                                                                  ├─ Job148 3D classes, input from Job147, ref map from job class#4. 4 classes, yes greyscale, LP-filter=20, 35 iterations.
                                                                                  └─ Job149 3D classes, input from Job147, ref map from job class#4. 8 classes, no greyscale, LP-filter=20, 35 iterations. Class#5,6&8 should be excluded for next step.
                                                                                     └─ Job150 Subset selection, input from Job149. Class#1-4&7 were selected. 265361 particles saved.
-                                                                                       └─ Job152 3D Refine, input from Job150. 
+                                                                                       └─ Job152 3D Refine, input from Job150. maps came out wrong, try without greyscale
+                                                                                       └─ Job153 3D Refine, repeat of job 152 without greyscale.
 
 
 
