@@ -145,15 +145,20 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                                                      │
                                                                      │
                                                                      │
-                                                                     └─ Job145 Re-extract, extract from subset Job133, bin1
-                                                                        └─ Job--- Re-scale map for bin1.relion_image_handler \--i /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc \--o /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc_360box_0.835angpix.mrc \--angpix 3.34 --rescale_angpix 0.835 --new_box 360
-                                                                           └─ Job146 3D class, input from Job145, ref map from job014 class#4. 4 classes, NO greyscale, LP-filter=50, 35 iterations.
-                                                                              └─ Job147 Subset select, input from Job146 Class#1,3&4 were selected. 379883 particles saved.
-                                                                                 ├─ Job148 3D classes, input from Job147, ref map from job class#4. 4 classes, yes greyscale, LP-filter=20, 35 iterations.
-                                                                                 └─ Job149 3D classes, input from Job147, ref map from job class#4. 8 classes, no greyscale, LP-filter=20, 35 iterations. Class#5,6&8 should be excluded for next step.
-                                                                                    └─ Job150 Subset selection, input from Job149. Class#1-4&7 were selected. 265361 particles saved.
-                                                                                       └─ Job152 3D Refine, input from Job150. maps came out wrong, try without greyscale
-                                                                                       └─ Job153 3D Refine, repeat of job 152 without greyscale.
+                                                                     ├─ Job145 Re-extract, extract from subset Job133, bin1
+                                                                     │  └─ Job--- Re-scale map for bin1.relion_image_handler \--i /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc \--o /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc_360box_0.835angpix.mrc \--angpix 3.34 --rescale_angpix 0.835 --new_box 360
+                                                                     │     └─ Job146 3D class, input from Job145, ref map from job014 class#4. 4 classes, NO greyscale, LP-filter=50, 35 iterations.
+                                                                     │        └─ Job147 Subset select, input from Job146 Class#1,3&4 were selected. 379883 particles saved.
+                                                                     │           ├─ Job148 3D classes, input from Job147, ref map from job class#4. 4 classes, yes greyscale, LP-filter=20, 35 iterations.
+                                                                     │           └─ Job149 3D classes, input from Job147, ref map from job class#4. 8 classes, no greyscale, LP-filter=20, 35 iterations. Class#5,6&8 should be excluded for next step.
+                                                                     │              └─ Job150 Subset selection, input from Job149. Class#1-4&7 were selected. 265361 particles saved.
+                                                                     │                 └─ Job152 3D Refine, input from Job150. maps came out wrong, try without greyscale
+                                                                     │                 └─ Job153 3D Refine, repeat of job 152 without greyscale.
+                                                                     │
+                                                                     │
+                                                                     └─ Job154 3D class, input from Job145, ref map from job014 class#4. 4 classes. Yes greyscale, LP-filter 20, iteration 35. maps are wrong sided but looks good. remove class#3 and do refine.
+                                                                        └─ Job155 Subset select, input from Job154, class#1,2&4 were saved. 337663 particles saved.
+                                                                           └─ Job156 3D refine, input from Job155, ref map from Job155 Class#2. Greysacale No. LP-filter 60.
 
 
 
