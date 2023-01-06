@@ -60,14 +60,24 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                            │  └─ Job082 Subset select, Class 3 only
                            │     └─ Job083 Class 5 seems to have PasA?, Class 7 look the best in detail, class 8 have the best resolution, 
                            │        │
-                           │        ├─ Job 084 Subset selection Class 5(3.6k@8.3A),7(3.2k@8.3A)&8(4.2k@7A) from job job083 1.1m
+                           │        ├─ Job 084 Subset selection Class 5(360k@8.3A),7(320k@8.3A)&8(420k@7A) from job job083 1.1m
                            │        │  ├─ Job085 3D Class 1.1m particles from job084 Class 5(360k@8.3A),7(320k@8.3A)&8(420k@7A) from job job083 Into 4 classes Note: Class 2 & 3 looks good, to combine and refine
-                           │        │  │  └─ Job088 Subset selection Class 2 (220k@9A) & Class 3 (240k@9.4A) from job085 460k particles
-                           │        │  │     └─ Job089 3Drefine from Job088
-                           │        │  │        └─ Job092 Mask creation - from Job089  Initial threshold: 0.0361 Extend pixels: 2 Edge pixels: 10
-                           │        │  │           └─ Job093 Post-processing Half-maps: job089 Mask: job092
-                           │        │  │              └─ NOTE- Map looked promising, particles to be re-extracted
-                           │        │  │             
+                           │        │  │  ├─ Job088 Subset selection Class 2 (220k@9A) & Class 3 (240k@9.4A) from job085 460k particles
+                           │        │  │  │  └─ Job089 3Drefine from Job088
+                           │        │  │  │     └─ Job092 Mask creation - from Job089  Initial threshold: 0.0361 Extend pixels: 2 Edge pixels: 10
+                           │        │  │  │        └─ Job093 Post-processing Half-maps: job089 Mask: job092
+                           │        │  │  │           └─ NOTE- Map looked promising, particles to be re-extracted
+                           │        │  │  │  
+                           │        │  │  └─ Job160 Re-extract, subset from Job088, bin 1                            
+                           │        │  │     └─ Job162 Class3D, STAR file from job160, reference map from job014 class#4. Greyscale: N, LP-filter: 30. No. Classes: 4, interation 35, Mask: 160A. 
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                           
                            │        │  └─ Job097 Re-extraction with subset from job084 1.1 mil particles Bin2 Particle size pix: 360 Re-scale: 180, bin 2.
                            │        │     └─ Job101 3Dclasses of Job097 into 8 classes, reference rescaled from Job091
                            │        │        └─ Job103 3D Class (redo of Job101 with 4 classes, instead of 8)
@@ -161,6 +171,8 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                                                            └─ Job156 3D refine, input from Job155, ref map from Job155 Class#2. Greysacale No. LP-filter 60.
                                                                               └─ Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job156/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job156/run_class001_15Alowpass.mrc \--lowpass 15
                                                                                  └─ Job157 MaskCreate, Input map from job156, 0.00186 threshold
+                                                                                    └─ Job159 CtfRefine, Particles from job156, STAR file from job158, Estimate mag: N, CTF fitting N, Esti beamtilt: Y, refoil: Y, aberrations: Y, mim res: 30A.
+                                                                                       └─ Job161 CtfRefine, Particles from job159, STAR file from job158, Estimate mag: Y, mim res: 30A.
 
 
 
