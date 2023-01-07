@@ -69,7 +69,9 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                            │        │  │  │           └─ NOTE- Map looked promising, particles to be re-extracted
                            │        │  │  │  
                            │        │  │  └─ Job160 Re-extract, subset from Job088, bin 1                            
-                           │        │  │     └─ Job162 Class3D, STAR file from job160, reference map from job014 class#4. Greyscale: N, LP-filter: 30. No. Classes: 4, interation 35, Mask: 160A. 
+                           │        │  │     └─ Job162 Class3D, STAR file from job160, reference map from job014 class#4. Greyscale: N, LP-filter: 30. No. Classes: 4, interation 35, Mask: 160A. Class#3&4 looks good, 400k particles.
+                           │        │  │        └─ Job165 Subset select, class#3&4 selected. 400k particles saved.
+                           │        │  │           └─ Job166 3D Refine, STAR file from job165, reference map from job156. Greyscale: N, LP-filter: 60.  
                            
                            
                            
