@@ -70,8 +70,26 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                            │        │  │  │  
                            │        │  │  └─ Job160 Re-extract, subset from Job088, bin 1                            
                            │        │  │     └─ Job162 Class3D, STAR file from job160, reference map from job014 class#4. Greyscale: N, LP-filter: 30. No. Classes: 4, interation 35, Mask: 160A. Class#3&4 looks good, 400k particles.
-                           │        │  │        └─ Job165 Subset select, class#3&4 selected. 400k particles saved.
-                           │        │  │           └─ Job166 3D Refine, STAR file from job165, reference map from job156. Greyscale: N, LP-filter: 60.  
+                           │        │  │     │  └─ Job165 Subset select, class#3&4 selected. 400k particles saved.
+                           │        │  │     │     └─ Job166 3D Refine, STAR file from job165, reference map from job156. Greyscale: N, LP-filter: 60.  
+                           │        │  │     │        └─ Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job166/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job166/run_class001_15Alowpass.mrc \--lowpass 15
+                           │        │  │     │           └─ Job170 MaskCreate, Input map from job166, 0.004396 threshold.
+                           │        │  │     │              └─ Job171 Post processing, half map from job166, Mask from job170. Estimate B factor: Y, auto-B fit: 10, own B: N
+                           │        │  │     │                 └─ Job172 CtfRefine, Round 1. Particles from job166, STAR file from job171, Estimate mag: N, CTF fitting N, Esti beamtilt: Y, refoil: Y, aberrations: Y, mim res: 30A.
+                           │        │  │     │                    └─ Job175 CtfRefine, Round 2. Particles from job172, STAR file from job171, Estimate mag: Y, mim res: 30A.
+                           │        │  │     │                       └─ Job177 CtfRefine, Round 3. Particles from job175, STAR file from job171, Estimate mag: N, CTF fitting: Y, defocus: Per-parti, astigmatism: per-micro, B-factor: N, phase-shift: N, aberrations: N. mim res: 30A.
+                           │        │  │     │                          └─ Job184 3D Refine, STAR file from job177, reference map from job166. Greyscale: N, LP-filter: 60. 4.175Å
+                           │        │  │     │                             └─ Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job184/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job184/run_class001_15Alowpass.mrc \--lowpass 15
+                           │        │  │     │                                └─ Job185 MaskCreate, Input map from job184, 0.004396 threshold.
+                           │        │  │     │                                   └─ Job186 Post processing, half map from job184, Mask from job185. Estimate B factor: Y, auto-B fit: 10, own B: N. 3.54Å
+                           │        │  │     └─ Job189 Class3D, STAR file from job160, reference map from OLD MAP. Greyscale: N, LP-filter: 30. No. Classes: 4, interation 35, Mask: 160A. Class#1, 3&4 looks good, 400k particles.                                   
+                           │        │  │        └─ Job190 Subset select, class#1, 3&4 selected. 400k particles saved. 452k particles                                                       
+                           │        │  │           └─ Job195 3D Refine, STAR file from job190, reference map from old map. Greyscale: N, LP-filter: 60. 4.118Å
+                           │        │  │              └─ Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job195/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job195/run_class001_15Alowpass.mrc \--lowpass 15
+                           │        │  │                 └─ Job199 MaskCreate, Input map from job195, 0.00189 threshold.
+                           │        │  │                    └─ Job200 Post processing, half map from job195, Mask from job199. Estimate B factor: Y, auto-B fit: 10, own B: N. 3.54Å
+                           │        │  │                       └─ Job201 CtfRefine, Round 1. Particles from job156, STAR file from job158, Estimate mag: N, CTF fitting N, Esti beamtilt: Y, refoil: Y, aberrations: Y, mim res: 30A.
+                           │        │  │                          └─
                            
                            
                            
@@ -181,6 +199,16 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                                                                                    └─ Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job164/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job164/run_class001_15Alowpass.mrc \--lowpass 15
                                                                                                       └─ Job167 MaskCreate, Input map from job164, 0.001637 threshold.
                                                                                                          └─ Job168 Post processing, half map from job164, Mask from job167. Estimate B factor: Y, auto-B fit: 10, own B: N.
+                                                                                                            ├─── Job169 B.Polishing, micrographs from job002, particles from job164, STAR file from job168. Extrat size: 360, Re-scale size: 360. Train: no. Polish: default. 
+                                                                                                            │    │
+                                                                                                            │    │                                                                                                          
+                                                                                                            └─ Job174 B.Polishing, micrographs from job002, particles from job164, STAR file from job168. Extrat size: 360, Re-scale size: 300. Train: no. Polish: default. 
+                                                                                                                 │
+                                                                                                                 │
+                                                                                                                 └─ Job183 3Drefine, Particles from job169, map from job164. Greysacale No. LP-filter 60.
+                                                                                                                    └─ Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job183/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job183/run_class001_15Alowpass.mrc \--lowpass 15
+
+
 
 
 relion_image_handler —-i map.mrc —-o inverte_map.mrc -—invert_hand
