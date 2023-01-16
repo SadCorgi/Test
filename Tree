@@ -91,9 +91,10 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                            │        │  │                       └─ Job201 CtfRefine, Round 1. Particles from job195, STAR file from job200, Estimate mag: N, CTF fitting N, Esti beamtilt: Y, refoil: Y, aberrations: Y, mim res: 30A.
                            │        │  │                          └─ Job202 CtfRefine, Round 2. Particles from job201, STAR file from job200, Estimate mag: Y, mim res: 30A.
                            │        │  │                             └─ Job203 CtfRefine, Round 3. Particles from job202, STAR file from job200, Estimate mag: N, CTF fitting: Y, defocus: Per-parti, astigmatism: per-micro, B-factor: N, phase-shift: N, aberrations: N. mim res: 30A.
-                           
-                           
-                           
+                           │        │  │                                └─ Job204 3D Refine, STAR file from job203, reference map from job195. Greyscale: N, LP-filter: 40. 3.955Å                           
+                           │        │  │                                   └─ Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job204/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job204/run_class001_15Alowpass.mrc \--lowpass 15                       
+                           │        │  │                                      └─ Job205 MaskCreate, Input map from job204, 0.00199 threshold.                           
+                           │        │  │                                         └─ Job206 Post processing, half map from job204, Mask from job205. Estimate B factor: Y, auto-B fit: 10, own B: N. Å   
                            
                            
                            
