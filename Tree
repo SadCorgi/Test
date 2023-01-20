@@ -95,7 +95,7 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                            │        │  │                                   └─ Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job204/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job204/run_class001_15Alowpass.mrc \--lowpass 15                       
                            │        │  │                                      └─ Job205 MaskCreate, Input map from job204, 0.00199 threshold.                           
                            │        │  │                                         └─ Job206 Post processing, half map from job204, Mask from job205. Estimate B factor: Y, auto-B fit: 10, own B: N. 3.378Å   
-                           
+                           │        │  │                                            └─ Job207 Poloish, Micrographs from job002, Particles fron job204, star file from job206. no re-scale. particle polishing: Y, own para: Y.                          
                            
                            
                            
