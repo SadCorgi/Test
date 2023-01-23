@@ -103,7 +103,7 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                            │        │  │                                                           └─ Job211 CtfRefine, Round 1. Particles from job208, STAR file from job210, Estimate mag: N, CTF fitting N, Esti beamtilt: Y, refoil: Y, aberrations: Y, mim res: 30A.                           
                            │        │  │                                                              └─ Job212 CtfRefine, Round 2. Particles from job211, STAR file from job210, Estimate mag: Y, mim res: 30A.                           
                            │        │  │                                                                 └─ Job214 CtfRefine, Round 3. Particles from job212, STAR file from job210, Estimate mag: N, CTF fitting: Y, defocus: Per-parti, astigmatism: per-micro, B-factor: N, phase-shift: N, aberrations: N. mim res: 30A.                           
-                           
+                           │        │  │                                                                    └─ Job215 3D Refine, STAR file from job214, reference map from job208. Greyscale: N, LP-filter: 30. Å                           
                            
                            
                            
