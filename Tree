@@ -101,7 +101,7 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                            │        │  │                                                     └─ Job209 MaskCreate, Input map from job208, 0.00206 threshold.                           
                            │        │  │                                                        └─ Job210 Post processing, half map from job208, Mask from job209. Estimate B factor: Y, auto-B fit: 10, own B: N. 3.13Å                           
                            │        │  │                                                           └─ Job211 CtfRefine, Round 1. Particles from job208, STAR file from job210, Estimate mag: N, CTF fitting N, Esti beamtilt: Y, refoil: Y, aberrations: Y, mim res: 30A.                           
-                           
+                           │        │  │                                                              └─ Job212 CtfRefine, Round 2. Particles from job211, STAR file from job210, Estimate mag: Y, mim res: 30A.                           
                            
                            
                            
