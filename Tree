@@ -117,7 +117,10 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                            │        │  │                                                                                                     └─ Job224 CtfRefine, Round 1. Particles from job221, STAR file from job223, Estimate mag: N, CTF fitting N, Esti beamtilt: Y, refoil: Y, aberrations: Y, mim res: 30A.           
                            │        │  │                                                                                                        └─ Job225 CtfRefine, Round 2. Particles from job224, STAR file from job223, Estimate mag: Y, mim res: 30A.        
                            │        │  │                                                                                                           └─ Job226 CtfRefine, Round 3. Particles from job225, STAR file from job223, Estimate mag: N, CTF fitting: Y, defocus: Per-parti, astigmatism: per-micro, B-factor: N, phase-shift: N, aberrations: N. mim res: 30A.        
-        
+                           │        │  │                                                                                                              └─ Job227 3D Refine, STAR file from job226, reference map from job221. Greyscale: N, LP-filter: 30. 3.45Å
+                           │        │  │                                                                                                                 └─ Job--- low LP filter map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job227/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job227/run_class001_15Alowpass.mrc \--lowpass 15       
+                           │        │  │                                                                                                                    └─ Job228 MaskCreate, Input map from job221, 0.00197 threshold.                           
+                           │        │  │                                                                                                                       └─ Job229 Post processing, half map from job227, Mask from job228. Estimate B factor: Y, auto-B fit: 10, own B: N. 2.9Å        
         
         
         
