@@ -70,18 +70,18 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                            │        │  │  │  
                            │        │  │  └─ Job160 Re-extract, subset from Job088, bin 1                            
                            │        │  │     └─ Job162 Class3D, STAR file from job160, reference map from job014 class#4. Greyscale: N, LP-filter: 30. No. Classes: 4, interation 35, Mask: 160A. Class#3&4 looks good, 400k particles.
-                           │        │  │     │  └─ Job165 Subset select, class#3&4 selected. 400k particles saved.
-                           │        │  │     │     └─ Job166 3D Refine, STAR file from job165, reference map from job156. Greyscale: N, LP-filter: 60.  
+                           │        │  │     │  └─ DELETED---Job165 Subset select, class#3&4 selected. 400k particles saved.
+                           │        │  │     │     └─ DELETED---Job166 3D Refine, STAR file from job165, reference map from job156. Greyscale: N, LP-filter: 60.  
                            │        │  │     │        └─ Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job166/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job166/run_class001_15Alowpass.mrc \--lowpass 15
-                           │        │  │     │           └─ Job170 MaskCreate, Input map from job166, 0.004396 threshold.
-                           │        │  │     │              └─ Job171 Post processing, half map from job166, Mask from job170. Estimate B factor: Y, auto-B fit: 10, own B: N
-                           │        │  │     │                 └─ Job172 CtfRefine, Round 1. Particles from job166, STAR file from job171, Estimate mag: N, CTF fitting N, Esti beamtilt: Y, refoil: Y, aberrations: Y, mim res: 30A.
-                           │        │  │     │                    └─ Job175 CtfRefine, Round 2. Particles from job172, STAR file from job171, Estimate mag: Y, mim res: 30A.
-                           │        │  │     │                       └─ Job177 CtfRefine, Round 3. Particles from job175, STAR file from job171, Estimate mag: N, CTF fitting: Y, defocus: Per-parti, astigmatism: per-micro, B-factor: N, phase-shift: N, aberrations: N. mim res: 30A.
-                           │        │  │     │                          └─ Job184 3D Refine, STAR file from job177, reference map from job166. Greyscale: N, LP-filter: 60. 4.175Å
+                           │        │  │     │           └─DELETED--- Job170 MaskCreate, Input map from job166, 0.004396 threshold.
+                           │        │  │     │              └─ DELETED---Job171 Post processing, half map from job166, Mask from job170. Estimate B factor: Y, auto-B fit: 10, own B: N
+                           │        │  │     │                 └─ DELETED---Job172 CtfRefine, Round 1. Particles from job166, STAR file from job171, Estimate mag: N, CTF fitting N, Esti beamtilt: Y, refoil: Y, aberrations: Y, mim res: 30A.
+                           │        │  │     │                    └─ DELETED---Job175 CtfRefine, Round 2. Particles from job172, STAR file from job171, Estimate mag: Y, mim res: 30A.
+                           │        │  │     │                       └─ DELETED---Job177 CtfRefine, Round 3. Particles from job175, STAR file from job171, Estimate mag: N, CTF fitting: Y, defocus: Per-parti, astigmatism: per-micro, B-factor: N, phase-shift: N, aberrations: N. mim res: 30A.
+                           │        │  │     │                          └─ DELETED---Job184 3D Refine, STAR file from job177, reference map from job166. Greyscale: N, LP-filter: 60. 4.175Å
                            │        │  │     │                             └─ Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job184/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job184/run_class001_15Alowpass.mrc \--lowpass 15
-                           │        │  │     │                                └─ Job185 MaskCreate, Input map from job184, 0.004396 threshold.
-                           │        │  │     │                                   └─ Job186 Post processing, half map from job184, Mask from job185. Estimate B factor: Y, auto-B fit: 10, own B: N. 3.54Å
+                           │        │  │     │                                └─ DELETED---Job185 MaskCreate, Input map from job184, 0.004396 threshold.
+                           │        │  │     │                                   └─ DELETED---Job186 Post processing, half map from job184, Mask from job185. Estimate B factor: Y, auto-B fit: 10, own B: N. 3.54Å
                            │        │  │     └─ Job189 Class3D, STAR file from job160, reference map from OLD MAP. Greyscale: N, LP-filter: 30. No. Classes: 4, interation 35, Mask: 160A. Class#1, 3&4 looks good, 400k particles.                                   
                            │        │  │        ├─ Job190 Subset select, class#1, 3&4 selected. 400k particles saved. 452k particles                                                       
                            │        │  │        │  └─ Job195 3D Refine, STAR file from job190, reference map from old map. Greyscale: N, LP-filter: 60. 4.118Å
@@ -134,37 +134,37 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                            │        │           ├─ Job104 Subset selection from job103 Select Class 1 (153k@8.3A) & 3 (266k@8.1A) 419k particles saved
                            │        │           │  └─ Job105 3D Classes Clone of job103, use subset from Job104 4 Classes
                            │        │           │     └─ Job110 Subset selection from Job105 Selected Class2 (169k@8.35A), Class3 (134k@7.7A) & Class4 (95k@8.6A) 399k particles saved
-                           │        │           │        └─ Job111 Re-Extraction From subset Job110, 399k particles, Bin1 not rescaled
-                           │        │           │           └─ Job112 3D classes From Job111 into 3 classes, Clone of job109
-                           │        │           │              ├─ Job113 Subset selection From Job112 Class 2(149k@9.1A) & Class3 (245k@6.8A), 394k particles selected
-                           │        │           │              │  └─ Job114 3DRefine from Job113, map from rescaled Job091 map (NOTE: job failed before convergence reduced MPI->4, threads->3, restarted)
+                           │        │           │        └─ DELETED---Job111 Re-Extraction From subset Job110, 399k particles, Bin1 not rescaled
+                           │        │           │           └─ DELETED---Job112 3D classes From Job111 into 3 classes, Clone of job109
+                           │        │           │              ├─ DELETED---Job113 Subset selection From Job112 Class 2(149k@9.1A) & Class3 (245k@6.8A), 394k particles selected
+                           │        │           │              │  └─ DELETED---Job114 3DRefine from Job113, map from rescaled Job091 map (NOTE: job failed before convergence reduced MPI->4, threads->3, restarted)
                            │        │           │              │     └─ Job--- low pass map generated, in job114 folder, Refined map doesn't make sense.
                            │        │           │              │        └─ STOPPED
                            │        │           │              │        
-                           │        │           │              └─ Job115 Subset select from Job112 Class3 (245k@6.8A)
-                           │        │           │                 └─ Job116 3DRefine from Job115, map from rescaled Job091 map (NOTE: job failed before convergence reduced MPI->4, threads->3, restarted)
+                           │        │           │              └─ DELETED---Job115 Subset select from Job112 Class3 (245k@6.8A)
+                           │        │           │                 └─ DELETED---Job116 3DRefine from Job115, map from rescaled Job091 map (NOTE: job failed before convergence reduced MPI->4, threads->3, restarted)
                            │        │           │                    └─ Job--- low pass map generated, in job116 folder
-                           │        │           │                       └─ Job117 Mask generation, level set to 0.004074
-                           │        │           │                          └─ Job118 Post processing,half-map from Job116, Mask from Job117
-                           │        │           │                             └─ Job119 CTFrefine particles from Job116, map from job 118
-                           │        │           │                                └─ Job120 3DRefine use images from Job119
+                           │        │           │                       └─ DELETED---Job117 Mask generation, level set to 0.004074
+                           │        │           │                          └─ DELETED---Job118 Post processing,half-map from Job116, Mask from Job117
+                           │        │           │                             └─ DELETED---Job119 CTFrefine particles from Job116, map from job 118
+                           │        │           │                                └─ DELETED---Job120 3DRefine use images from Job119
                            │        │           │ 
-                           │        │           └─ Job106 Subset selection from Job103 Select Class 1 (153k@8.3A), Class 2 (330k@6.5A)( & 3 (266k@8.1A)  749k particles saved
+                           │        │           └─ DELETED---Job106 Subset selection from Job103 Select Class 1 (153k@8.3A), Class 2 (330k@6.5A)( & 3 (266k@8.1A)  749k particles saved
                            │        │              │
-                           │        │              └─ Job107 Re-extraction Using subset from Job016 Box size 360, not rescaled, bin1
-                           │        │                 ├─ Job108 3Dclasses from extracted particles from Job107 Rescaled map 4 classes, reference rescaled from job091
-                           │        │                 └─ Job109 3Dclasses from extracted particles from Job107 Rescaled map 3 classes
+                           │        │              └─ DELETED---Job107 Re-extraction Using subset from Job016 Box size 360, not rescaled, bin1
+                           │        │                 ├─ DELETED---Job108 3Dclasses from extracted particles from Job107 Rescaled map 4 classes, reference rescaled from job091
+                           │        │                 └─ DELETED---Job109 3Dclasses from extracted particles from Job107 Rescaled map 3 classes
                            │        ├─ 
-                           │        ├─ Job086 Subset selection Class 5(360k@8.3A) from job083 (might have PasA)
-                           │        │  └─ Job087 Class3D 3.6k particles from job086 Class 5(360k@8.3A) from job083 Into 4 classes Note: Class 1, 3 & 4 looks good, to combine and refine
-                           │        │     └─ Job090 Subset selection from job087 Class 1 (105k@9A), Class 3 (128k@8.5A) & Class 4 (97k@10.3A) 330k particlesJob094 Mask creation - from Job091 Initial threshold: 0.041 Extend pixels: 2 Edge pixels: 10
-                           │        │        └─ Job091 3Drefine From job090
-                           │        │           └─ Job094 Mask creation - from Job091 Initial threshold: 0.041 Extend pixels: 2 Edge pixels: 10
-                           │        │              └─ Job095 Post-processing Half-maps: job091 Mask: job094
+                           │        ├─ DELETED---Job086 Subset selection Class 5(360k@8.3A) from job083 (might have PasA)
+                           │        │  └─ DELETED---Job087 Class3D 3.6k particles from job086 Class 5(360k@8.3A) from job083 Into 4 classes Note: Class 1, 3 & 4 looks good, to combine and refine
+                           │        │     └─ DELETED---Job090 Subset selection from job087 Class 1 (105k@9A), Class 3 (128k@8.5A) & Class 4 (97k@10.3A) 330k particlesJob094 Mask creation - from Job091 Initial threshold: 0.041 Extend pixels: 2 Edge pixels: 10
+                           │        │        └─ DELETED---Job091 3Drefine From job090
+                           │        │           └─ DELETED---Job094 Mask creation - from Job091 Initial threshold: 0.041 Extend pixels: 2 Edge pixels: 10
+                           │        │              └─ DELETED---Job095 Post-processing Half-maps: job091 Mask: job094
                            │        │                 └─ STOPPED - not promising
                            │        ├─ 
-                           │        ├─ Job096 3D classes Copy of job083 8 classes Changes  low pass filter: 5 Iteration: 10 Fast subset: no
-                           │           └─ Job102 3D Class (redo of Job096 with 4 classes, instead of 8)
+                           │        ├─ DELETED---Job096 3D classes Copy of job083 8 classes Changes  low pass filter: 5 Iteration: 10 Fast subset: no
+                           │           └─ DELETED---Job102 3D Class (redo of Job096 with 4 classes, instead of 8)
                            │              └─ STOPPED - low pass filter and no fast subset did not improve quality
                            │        
                            │   ^^^^^^^^^^^ All 3D classes above have used the wrong ref map from Job014 ^^^^^^^^^^^^
@@ -181,9 +181,9 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                                 │       └─ Job130 3Drefine, input from Job129, ref map from Job014 Class#4_rescaled.
                                                 │    
                                                 │
-                                                └─ Job131 Re-extraction, input from Job127, Bin 2. 455483 particles extracted.
+                                                └─ DELETED---Job131 Re-extraction, input from Job127, Bin 2. 455483 particles extracted.
                                                    ├─ Job---rescale map, Class#4 from Job014 rescaled to 180box size, 1.67A. relion_image_handler \--i /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc \--o /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc_180box_3.34angpix.mrc \--angpix 3.34 --rescale_angpix 1.67 --new_box 180
-                                                   │  └──── Job132 3D class, input from Job131, ref map from Job014 Class#4 rescaled. Class#3 has the least detail compare to others, not saved for latter proceedures.
+                                                   │  └────DELETED---Job132 3D class, input from Job131, ref map from Job014 Class#4 rescaled. Class#3 has the least detail compare to others, not saved for latter proceedures.
                                                    │        ├───────Job133 Subset select, input from Job132, Class#1,2&4 selected. 401213 particles saved.
                                                    │        │        ├─ Job134 3Drefine, input from Job133, refined model is distorded. try with less classes/particles.
                                                    │        │        │ 
@@ -195,47 +195,47 @@ Job001 Import 13006 images. Copy gain ref., convert gain ref., bin gainref. ->ga
                                                    │     ^^^^^^^^^ maps in mirror image after 3D classes i.e. job 132, redo 3Dclass in different settings below ^^^^^
                                                    │                 │
                                                    │                 │
-                                                   ├─ Job139 3D class, input from Job131, ref map from Job014 Class#4 rescaled. low pass-filter reduced to 15 from 20 
-                                                   ├─ Job140 3D class, input from Job131, ref map from Job014 Class#4 rescaled. do not use fast subset, 10 iterations(LP-filter 20. 
-                                                   ├─ Job141 3D class, input from Job131, ref map from good map rescaled.  Output maps still at the wrong hand
+                                                   ├─ DELETED---Job139 3D class, input from Job131, ref map from Job014 Class#4 rescaled. low pass-filter reduced to 15 from 20 
+                                                   ├─ DELETED---Job140 3D class, input from Job131, ref map from Job014 Class#4 rescaled. do not use fast subset, 10 iterations(LP-filter 20. 
+                                                   ├─ DELETED---Job141 3D class, input from Job131, ref map from good map rescaled.  Output maps still at the wrong hand
                                                    │                 │
                                                    │                 │
-                                                   ├─ Job142 2D class, input from Job131, try to redo 2D class then 3D to see if it will improve situation
-                                                   └─ Job143 3D class, repeat of Job132, with NO greyscale, LP-filter=50, iteration 35. Maps are correctly handed. Follow these settings.
+                                                   ├─ DELETED---Job142 2D class, input from Job131, try to redo 2D class then 3D to see if it will improve situation
+                                                   └─ DELETED---Job143 3D class, repeat of Job132, with NO greyscale, LP-filter=50, iteration 35. Maps are correctly handed. Follow these settings.
                                                                      │
                                                                      │
                                                                      │
-                                                                     ├─ Job145 Re-extract, extract from subset Job133, bin1
+                                                                     ├─ DELETED---Job145 Re-extract, extract from subset Job133, bin1
                                                                      │  └─ Job--- Re-scale map for bin1.relion_image_handler \--i /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc \--o /home/hsk15/P81_ITE/Class3D/job014/run_ct23_it025_class004.mrc_360box_0.835angpix.mrc \--angpix 3.34 --rescale_angpix 0.835 --new_box 360
-                                                                     │     └─ Job146 3D class, input from Job145, ref map from job014 class#4. 4 classes, NO greyscale, LP-filter=50, 35 iterations.
-                                                                     │        └─ Job147 Subset select, input from Job146 Class#1,3&4 were selected. 379883 particles saved.
-                                                                     │           ├─ Job148 3D classes, input from Job147, ref map from job class#4. 4 classes, yes greyscale, LP-filter=20, 35 iterations.
-                                                                     │           └─ Job149 3D classes, input from Job147, ref map from job class#4. 8 classes, no greyscale, LP-filter=20, 35 iterations. Class#5,6&8 should be excluded for next step.
-                                                                     │              └─ Job150 Subset selection, input from Job149. Class#1-4&7 were selected. 265361 particles saved.
-                                                                     │                 └─ Job152 3D Refine, input from Job150. maps came out wrong, try without greyscale
-                                                                     │                 └─ Job153 3D Refine, repeat of job 152 without greyscale.
+                                                                     │     └─ DELETED---Job146 3D class, input from Job145, ref map from job014 class#4. 4 classes, NO greyscale, LP-filter=50, 35 iterations.
+                                                                     │        └─ DELETED---Job147 Subset select, input from Job146 Class#1,3&4 were selected. 379883 particles saved.
+                                                                     │           ├─ DELETED---Job148 3D classes, input from Job147, ref map from job class#4. 4 classes, yes greyscale, LP-filter=20, 35 iterations.
+                                                                     │           └─ DELETED---Job149 3D classes, input from Job147, ref map from job class#4. 8 classes, no greyscale, LP-filter=20, 35 iterations. Class#5,6&8 should be excluded for next step.
+                                                                     │              └─ DELETED---Job150 Subset selection, input from Job149. Class#1-4&7 were selected. 265361 particles saved.
+                                                                     │                 └─ DELETED---Job152 3D Refine, input from Job150. maps came out wrong, try without greyscale
+                                                                     │                 └─DELETED---Job153 3D Refine, repeat of job 152 without greyscale.
                                                                      │
                                                                      │
-                                                                     └─ Job154 3D class, input from Job145, ref map from job014 class#4. 4 classes. Yes greyscale, LP-filter 20, iteration 35. maps are wrong sided but looks good. remove class#3 and do refine.
-                                                                        └─ Job155 Subset select, input from Job154, class#1,2&4 were saved. 337663 particles saved.
-                                                                           └─ Job156 3D refine, input from Job155, ref map from Job155 Class#2. Greysacale No. LP-filter 60. Final res: 3.955Å
-                                                                              └─ Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job156/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job156/run_class001_15Alowpass.mrc \--lowpass 15
-                                                                                 └─ Job157 MaskCreate, Input map from job156, 0.00186 threshold. 
-                                                                                    └─ Job158 Post processing, half map from job156, Mask from job157. Estimate B factor: Y, auto-B fit: 10, own B: N. Final Res: 3.34Å
-                                                                                       └─ Job159 CtfRefine, Round 1. Particles from job156, STAR file from job158, Estimate mag: N, CTF fitting N, Esti beamtilt: Y, refoil: Y, aberrations: Y, mim res: 30A.
-                                                                                          └─ Job161 CtfRefine, Round 2. Particles from job159, STAR file from job158, Estimate mag: Y, mim res: 30A.
-                                                                                             └─ Job163 CtfRefine, Round 3. Particles from job161, STAR file from job158, Estimate mag: N, CTF fitting: Y, defocus: Per-parti, astigmatism: per-micro, B-factor: N, phase-shift: N, aberrations: N. mim res: 30A.
-                                                                                                └─ Job164 3D refine. Star from job163, map from job156. Greysacale No. LP-filter 60.
-                                                                                                   └─ Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job164/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job164/run_class001_15Alowpass.mrc \--lowpass 15
-                                                                                                      └─ Job167 MaskCreate, Input map from job164, 0.001637 threshold.
-                                                                                                         └─ Job168 Post processing, half map from job164, Mask from job167. Estimate B factor: Y, auto-B fit: 10, own B: N.
-                                                                                                            ├─── Job169 B.Polishing, micrographs from job002, particles from job164, STAR file from job168. Extrat size: 360, Re-scale size: 360. Train: no. Polish: default. 
+                                                                     └─ DELETED---Job154 3D class, input from Job145, ref map from job014 class#4. 4 classes. Yes greyscale, LP-filter 20, iteration 35. maps are wrong sided but looks good. remove class#3 and do refine.
+                                                                        └─ DELETED---Job155 Subset select, input from Job154, class#1,2&4 were saved. 337663 particles saved.
+                                                                           └─ DELETED---Job156 3D refine, input from Job155, ref map from Job155 Class#2. Greysacale No. LP-filter 60. Final res: 3.955Å
+                                                                              └─ DELETED---Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job156/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job156/run_class001_15Alowpass.mrc \--lowpass 15
+                                                                                 └─ DELETED---Job157 MaskCreate, Input map from job156, 0.00186 threshold. 
+                                                                                    └─DELETED--- Job158 Post processing, half map from job156, Mask from job157. Estimate B factor: Y, auto-B fit: 10, own B: N. Final Res: 3.34Å
+                                                                                       └─ DELETED---Job159 CtfRefine, Round 1. Particles from job156, STAR file from job158, Estimate mag: N, CTF fitting N, Esti beamtilt: Y, refoil: Y, aberrations: Y, mim res: 30A.
+                                                                                          └─ DELETED---Job161 CtfRefine, Round 2. Particles from job159, STAR file from job158, Estimate mag: Y, mim res: 30A.
+                                                                                             └─DELETED--- Job163 CtfRefine, Round 3. Particles from job161, STAR file from job158, Estimate mag: N, CTF fitting: Y, defocus: Per-parti, astigmatism: per-micro, B-factor: N, phase-shift: N, aberrations: N. mim res: 30A.
+                                                                                                └─ DELETED---Job164 3D refine. Star from job163, map from job156. Greysacale No. LP-filter 60.
+                                                                                                   └─ DELETED---Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job164/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job164/run_class001_15Alowpass.mrc \--lowpass 15
+                                                                                                      └─ DELETED---Job167 MaskCreate, Input map from job164, 0.001637 threshold.
+                                                                                                         └─DELETED--- Job168 Post processing, half map from job164, Mask from job167. Estimate B factor: Y, auto-B fit: 10, own B: N.
+                                                                                                            ├─── DELETED---Job169 B.Polishing, micrographs from job002, particles from job164, STAR file from job168. Extrat size: 360, Re-scale size: 360. Train: no. Polish: default. 
                                                                                                             │    │
                                                                                                             │    │                                                                                                          
-                                                                                                            └─ Job174 B.Polishing, micrographs from job002, particles from job164, STAR file from job168. Extrat size: 360, Re-scale size: 300. Train: no. Polish: default. 
+                                                                                                            └─ DELETED---Job174 B.Polishing, micrographs from job002, particles from job164, STAR file from job168. Extrat size: 360, Re-scale size: 300. Train: no. Polish: default. 
                                                                                                                  │
                                                                                                                  │
-                                                                                                                 └─ Job183 3Drefine, Particles from job169, map from job164. Greysacale No. LP-filter 60.
+                                                                                                                 └─ DELETED---Job183 3Drefine, Particles from job169, map from job164. Greysacale No. LP-filter 60.
                                                                                                                     └─ Job--- low pass filtered map created. relion_image_handler \--i /home/hsk15/P81_ITE/Refine3D/job183/run_class001.mrc \--o /home/hsk15/P81_ITE/Refine3D/job183/run_class001_15Alowpass.mrc \--lowpass 15
 
 
