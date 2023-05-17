@@ -1,8 +1,9 @@
 Job001 Import 9849 images. added 't' to tif. Pix size 0.835. Copy gain ref. to BAP, convert gain ref. ->gain.mrc, bin gainref. ->gainbin2.mrc
 └─ Job002 Motion Corr, input from Job001. Patch 5 5. No rotate, flip up-side-down. MPI 2, Threads 1, GPU 2
-   ├─ xxxJob003 CTF estimation, input from job2.
-   │   └─ xxxJob004 Subset select, input from Job003. Sorted by figure of merit. Choose image of cut off, select good images 12307 images saved
-   │      ├─ xxxJob005 Subset select, imput from Job004. 20 random images saved.  
-   │      │  └─ xxxJob006 Manual picking, input from Job005. Particle size 150. Checked particles.
-   │      │     └─ xxxJob007 Autopick, input from Job005. Lap of Gau Yes, min 100 max 150. Autopick perfoermed fine, proceeded to picking all particles.
-   │      │
+   ├─ Job003 CTF estimation, input from job2.
+       ├─ Job004 Subset select, redo in Job005
+       └─ Job005 Subset select, input from Job003. Sorted by figure of merit. Choose worst 1000 image to remove, select 8849 images to save
+       │  ├─ Job006 Subset select, imput from Job005. 20 random images saved.  
+       │  │  └─ Job007 Manual picking, input from Job006. Particle size 150. Checked particles.
+       │  │     └─ Job008 Autopick, input from Job006. Lap of Gau Yes, min 100 max 150. Autopick perfoermed fine, proceeded to picking all particles.
+       │  └─ Job009 Autopick, input from Job005. Lap of Gau Yes, min 100 max 150.  
