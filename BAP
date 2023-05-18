@@ -7,4 +7,4 @@ Job001 Import 9849 images. added 't' to tif. Pix size 0.835. Copy gain ref. to B
        │  │  └─ Job007 Manual picking, input from Job006. Particle size 150. Checked particles.
        │  │     └─ Job008 Autopick, input from Job006. Lap of Gau Yes, min 100 max 150. Autopick perfoermed fine, proceeded to picking all particles.
        │  └─ Job009 Autopick, input from Job005. Lap of Gau Yes, min 100 max 150. 6,327,916 particles picked.
-             └─ Job010 2, 
+             └─ Job010 Extract, micrographes from Job005, coordinates from Job009, Box size 360, rescale 90, bin 4. 
