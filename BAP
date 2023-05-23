@@ -8,3 +8,7 @@ Job001 Import 9849 images. added 't' to tif. Pix size 0.835. Copy gain ref. to B
        │  │     └─ Job008 Autopick, input from Job006. Lap of Gau Yes, min 100 max 150. Autopick perfoermed fine, proceeded to picking all particles.
        │  └─ Job009 Autopick, input from Job005. Lap of Gau Yes, min 100 max 150. 6,327,916 particles picked.
              └─ Job010 Extract, micrographes from Job005, coordinates from Job009, Box size 360, rescale 90, bin 4. 
+                └─ Job011 2D class, Input from Job009. 100 classes, fast subset No, Mask 160A. Aborted restart with fast subset.
+                   └─ Job012 2D class, Input from Job009. 100 classes, fast subset Yes, Mask 160A.
+                      └─ Job013 Subset select, imput from Job012. 6162013 particles saved.
+                         └─ Job014 Class 3D
