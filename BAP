@@ -11,5 +11,5 @@ Job001 Import 9849 images. added 't' to tif. Pix size 0.835. Copy gain ref. to B
                 └─ Job011 2D class, Input from Job009. 100 classes, fast subset No, Mask 160A. Aborted restart with fast subset.
                    └─ Job012 2D class, Input from Job009. 100 classes, fast subset Yes, Mask 160A.
                       └─ Job013 Subset select, imput from Job012. 6162013 particles saved.
-                         └─ Job014 Class 3D, Input from Job013. Ref map Job014 from P81_ITE, LP filter: 20. 4 classes, 25 iterations.
+                         └─ Job014 Class 3D, Input from Job013. Ref map Job014 from P81_ITE, LP filter: 20. 4 classes, 25 iterations. Aborted, restarted with refmap from P81_CH.
                             └─ Job015 Class 3D, Input from Job013. Ref map P81_CH, LP filter: 20. 4 classes, 25 iterations.
